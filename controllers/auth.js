@@ -7,14 +7,7 @@ const { validationResult } = require('express-validator/check');
 
 const User = require('../models/user');
 
-// const transporter = nodemailer.createTransport(
-//   sendgridTransport({
-//     auth: {
-//       api_key:
-//         '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'
-//     }
-//   })
-// );
+
 
 exports.getLogin = (req, res, next) => {
   let message = req.flash('error');
