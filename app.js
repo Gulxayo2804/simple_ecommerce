@@ -14,6 +14,7 @@ const User = require('./models/user');
 
 const MONGODB_URI =
      'mongodb+srv://gulkhayo:gulkhayo@cluster0.rkdaucr.mongodb.net/shop?retryWrites=true&w=majority&appName=Cluster0';
+
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
@@ -60,15 +61,9 @@ app.use(
     secret: 'my secret',
     resave: false,
     saveUninitialized: false,
-    store: store,
-    cookie: {
-      secure: false,     // must be false in localhost
-      httpOnly: true,
-      sameSite: 'lax'
-    }
+    store: store
   })
 );
-
 app.use(csrfProtection);
 app.use(flash());
 
@@ -110,7 +105,7 @@ app.use((error, req, res, next) => {
   res.status(500).render('500', {
     pageTitle: 'Error!',
     path: '/500',
-    isAuthenticated: req.session?.isLoggedIn || false
+    isAuthenticated: req.session.isLoggedIn
   });
 });
 
