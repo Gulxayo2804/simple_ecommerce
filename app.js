@@ -14,7 +14,7 @@ const User = require('./models/user');
 
 const MONGODB_URI =
      'mongodb+srv://gulkhayo:gulkhayo@cluster0.rkdaucr.mongodb.net/shop?retryWrites=true&w=majority&appName=Cluster0';
-
+     
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
