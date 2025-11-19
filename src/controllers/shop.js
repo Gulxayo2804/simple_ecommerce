@@ -4,8 +4,8 @@ const stripe = require('stripe')('sk_test_51SFMRW2IB3Mb82oEG48uGCTs0FgSDpn10iwmJ
 
 const PDFDocument = require('pdfkit');
 
-const Product = require('../models/product');
-const Order = require('../models/order');
+const Product = require('../../models/product');
+const Order = require('../../models/order');
 
 const ITEMS_PER_PAGE = 2;
 
