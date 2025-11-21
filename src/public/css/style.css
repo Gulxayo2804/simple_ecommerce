@@ -1,0 +1,48 @@
+:root{
+  --accent:#0b74de;
+  --muted:#666;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --radius:10px;
+  --container-width:1100px;
+}
+
+*{box-sizing:border-box}
+body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#222}
+.container{max-width:var(--container-width); margin:0 auto; padding:20px}
+
+/* header */
+.site-header{background:#fff; box-shadow:0 1px 6px rgba(15,15,15,0.06)}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:20px}
+.brand{font-weight:700; font-size:20px; text-decoration:none; color:#111}
+.brand .accent{color:var(--accent)}
+.site-header nav a{margin-left:16px; color:var(--muted); text-decoration:none}
+.site-header nav a:hover{color:var(--accent)}
+
+/* main content */
+.main-content{padding:28px 20px}
+
+/* product grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px}
+.card{background:var(--card); padding:14px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(20,20,50,0.06)}
+.card img{width:100%; height:160px; object-fit:cover; border-radius:8px}
+.card h3{margin:10px 0 6px; font-size:16px}
+.card p{margin:0; color:var(--muted); font-size:14px}
+.price{font-weight:700; margin-top:8px}
+
+/* admin table */
+.table{width:100%; border-collapse:collapse}
+.table th, .table td{padding:10px; border-bottom:1px solid #eee; text-align:left}
+.table th{color:var(--muted); font-weight:600; font-size:13px}
+
+/* forms */
+.form{background:var(--card); padding:20px; border-radius:10px; box-shadow:0 6px 18px rgba(20,20,50,0.03)}
+.form input[type="text"], .form input[type="email"], .form input[type="password"], .form textarea, .form select {
+  width:100%; padding:10px; border:1px solid #e6e6e6; border-radius:8px; margin-top:8px; margin-bottom:12px;
+}
+
+/* buttons */
+.btn{display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; color:white; background:var(--accent); border:none; cursor:pointer}
+.btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(11,116,222,0.12)}
+
+.site-footer{padding:18px 0; text-align:center; color:var(--muted); margin-top:28px}
