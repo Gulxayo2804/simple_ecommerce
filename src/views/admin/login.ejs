@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+</head>
+<body>
+  <h1>Admin Login</h1>
+  <% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+  <% } %>
+  <form action="/admin/login" method="post">
+    <div><label>Email: <input type="email" name="email" required></label></div>
+    <div><label>Password: <input type="password" name="password" required></label></div>
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>

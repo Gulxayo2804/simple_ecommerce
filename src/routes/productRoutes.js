@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 const upload = require('../middlewares/uploadMiddleware');
-const isAuth = require('../middleware/is-auth');
-const isAdmin = require('../middleware/is-admin');
-const productController = require('../controllers/product');
+const isAuth = require('../middlewares/is-auth');
+const isAdmin = require('../middlewares/is-admin');
 
 
 router.get('/', productController.getAllProducts);

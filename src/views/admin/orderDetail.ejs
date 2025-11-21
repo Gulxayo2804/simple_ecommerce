@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order <%= order._id %></title>
+</head>
+<body>
+  <h1>Order <%= order._id %></h1>
+  <a href="/admin/orders">Back to Orders</a> | <a href="/admin/logout">Logout</a>
+  <p><strong>User:</strong> <%= order.user.email %></p>
+  <p><strong>Address:</strong> <%= order.address || '—' %></p>
+  <p><strong>Total:</strong> $<%= order.total %></p>
+  <p><strong>Status:</strong> <%= order.status %></p>
+
+  <h3>Items</h3>
+  <ul>
+    <% order.items.forEach(it => { %>
+      <li><%= it.name %> — $<%= it.price %> × <%= it.quantity %></li>
+    <% }) %>
+  </ul>
+
+  <h3>Change status</h3>
+  <form action="/admin/orders/<%= order._id %>/status" method="post">
+    <select name="status">
+      <option value="pending" <%= order.status==='pending'?'selected':'' %>>pending</option>
+      <option value="processing" <%= order.status==='processing'?'selected':'' %>>processing</option>
+      <option value="shipped" <%= order.status==='shipped'?'selected':'' %>>shipped</option>
+      <option value="delivered" <%= order.status==='delivered'?'selected':'' %>>delivered</option>
+      <option value="cancelled" <%= order.status==='cancelled'?'selected':'' %>>cancelled</option>
+    </select>
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>
