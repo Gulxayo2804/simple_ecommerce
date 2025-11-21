@@ -12,6 +12,7 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.use('/api/products', productRoutes);
+app.use('/uploads', express.static('public/uploads'));
 
 // Error middleware
 app.use(errorMiddleware);

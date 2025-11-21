@@ -21,7 +21,12 @@ exports.getProductById = async (req, res, next) => {
 
 exports.createProduct = async (req, res, next) => {
     try {
-        const newProduct = await productService.createProduct(req.body);
+        const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
+
+        const newProduct = await productService.createProduct({
+            ...req.body,
+            image: imageUrl,
+        });
         res.status(201).json(newProduct);
     } catch (err) {
         next(err);
