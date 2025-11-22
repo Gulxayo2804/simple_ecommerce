@@ -3,8 +3,12 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 exports.getLoginPage = (req, res) => {
-  res.render('admin/login', { error: null });
+  res.render('admin/login', {
+    error: null,
+    title: 'Login'
+  });
 };
+
 
 exports.postLogin = async (req, res, next) => {
   try {
